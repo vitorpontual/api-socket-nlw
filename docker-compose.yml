@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+    database:
+      image: postgres
+      container_name: db_nlw5
+      ports:
+        - 50234:5432
+      environment:
+        - POSTGRES_USER=docker
+        - POSTGRES_PASSWORD=nlw5
+        - POSTGRES_DB=db_nlw5
+      volumes:
+        - pgdata:/data/postgres
+      networks:
+        backend:
+          ipv4_address: 14.1.1.2
+volumes:
+  pgdata:
+    driver: local
+
+networks:
+  backend:
+    ipam:
+      driver: default
+      config:
+        - subnet: 14.1.1.1/12

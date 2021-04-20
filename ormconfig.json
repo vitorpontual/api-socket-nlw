@@ -1,0 +1,13 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": "50234",
+  "username": "docker",
+  "password": "nlw5",
+  "database": "db_nlw5",
+  "migrations": ["./src/database/migrations/**.ts"],
+  "entities": ["./src/entities/**.ts"],
+  "cli":{
+    "migrationsDir": "./src/database/migrations"
+  }
+}
